@@ -23,9 +23,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/app/templates", StaticFiles(directory="app/templates"), name="app/templates")
-templates = Jinja2Templates(directory="app/templates")
-
 @app.get("/")
 def home():
     return {"test": "ok"}
